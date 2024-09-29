@@ -1,0 +1,115 @@
+
+* {
+  box-sizing: border-box; 
+}
+
+html, body {
+  margin: 0; 
+  height: 100%; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  background-color: #e9eff1; 
+}
+
+.app {
+  display: flex; 
+  height: 100vh; 
+}
+
+.sidebar {
+  width: 250px; 
+  background-color: #ffffff; 
+  padding: 20px; 
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
+  height: 100%; 
+  position: relative; 
+}
+
+.sidebar h2 {
+  margin: 0 0 20px; 
+  font-size: 24px; 
+  color: #2c3e50; 
+}
+
+.sidebar nav a {
+  display: block; 
+  padding: 10px; 
+  color: #34495e; 
+  text-decoration: none; 
+  margin-bottom: 10px; 
+  border-radius: 5px; 
+  transition: background-color 0.3s; 
+}
+
+.sidebar nav a:hover {
+  background-color: #f0f4f8; 
+}
+
+.dashboard {
+  border-radius: 8px;
+    vertical-align: top;
+    background: #fff;
+    position: relative;
+    min-height: 238px;
+}
+
+.header {
+  margin-bottom: 20px; 
+}
+
+.header h1 {
+  margin: 0; 
+  font-size: 28px; 
+  color: #2c3e50; 
+}
+
+.header p {
+  color: #7f8c8d; 
+  font-size: 16px; 
+}
+
+.upcoming-holidays {
+  margin-top: 20px; 
+  background-color: #f7f8fa; 
+  padding: 20px; /* Padding */
+  border-radius: 10px; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+}
+
+.tracked-hours {
+  margin-top: 20px; 
+  background-color: #f7f8fa; 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+}
+
+.hours {
+  display: flex; 
+  justify-content: space-between; 
+}
+
+.worked-hours, .break-hours {
+  background-color: #ffffff; 
+  padding: 15px; 
+  border-radius: 10px; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+  width: 48%; 
+}
+
+h3 {
+  margin: 0; 
+  font-size: 20px; 
+  color: #2c3e50; 
+}
+
+h2 {
+  font-size: 22px; 
+  margin-bottom: 10px;
+  color: #2c3e50; 
+}
+
+p {
+  margin: 0; 
+  color: #34495e;
+  line-height: 1.5; 
+}
