@@ -31,53 +31,61 @@ const Dashboard = ({ user }) => {
   };
 
   const dashboardStyle = {
-    flex: 1,
-    padding: '20px',
-    backgroundColor: '#ffffff',
-    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-    borderRadius: '10px',
-    height: '200vh',
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '30px',
+    backgroundColor: '#f4f6f9',
+    boxShadow: '0 0 15px rgba(0, 0, 0, 0.1)',
+    borderRadius: '15px',
+    minHeight: '100vh',
   };
 
   const headerStyle = {
-    marginBottom: '20px',
+    marginBottom: '15px',
+    fontWeight: '600',
+    fontSize: '14px',
+    color: '#333',
   };
 
   const navbarStyle = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: '#ffff',
-    color: 'rgb(171 162 162)',
-    padding: '10px 20px',
-    borderRadius: '10px',
+    display: 'flex', // Layout: Flexbox for alignment
+    justifyContent: 'space-between', // Space between items
+    // alignItems: 'center', // Uncomment if vertical centering is needed
+    // backgroundColor: 'rgb(255, 255, 255)', // Uncomment for white background
+    // color: 'rgb(85, 85, 85)', // Uncomment for custom font color
+    padding: '10px 25px', // Padding for spacing inside the navbar
+    borderRadius: '12px', // Rounded corners
+    // boxShadow: '0 0 10px rgba(0, 0, 0, 0.05)', // Uncomment for subtle shadow
+     marginBottom: '-17px', // Uncomment for spacing below the navbar
   };
+  
 
   const buttonContainerStyle = {
     display: 'flex',
     gap: '10px',
-    alignItems: 'inherit',
+    alignItems: 'center',
   };
 
-  // Blinking animation using keyframes
   const buttonStyle = {
-    padding: '7px 16px',
+    padding: '8px 18px',
     border: 'none',
-    borderRadius: '16px',
+    borderRadius: '20px',
     cursor: 'pointer',
-    color: '#ffffff',
-    backgroundColor: isRunning ? '#00cc00' : '#ff0000', // Green when running, red when paused
+    color: '#fff',
+    backgroundColor: isRunning ? '#28a745' : '#dc3545', // Green when running, red when paused
     display: 'flex',
     alignItems: 'center',
-    gap: '5px',
-    animation: isRunning ? 'blink 1s infinite alternate' : 'none',
+    gap: '8px',
+    fontSize: '16px',
+    transition: 'background-color 0.3s ease',
+    boxShadow: '0 0 5px rgba(0, 0, 0, 0.1)',
+    fontWeight: '500',
   };
 
-  // CSS keyframes for blinking
   const blinkAnimation = `
     @keyframes blink {
-      0% { background-color: #ff0000; }
-      100% { background-color: #00cc00; }
+      0% { background-color: #dc3545; }
+      100% { background-color: #28a745; }
     }
   `;
 
@@ -85,38 +93,38 @@ const Dashboard = ({ user }) => {
     display: 'flex',
     justifyContent: 'space-between',
     marginTop: '20px',
-    backgroundColor: '#f7f8fa',
-    padding: '20px',
-    borderRadius: '10px',
+    gap: '20px',
   };
 
   const holidayBlockStyle = {
-    backgroundColor: '#ffffff',
-    padding: '15px',
-    borderRadius: '10px',
-    boxShadow: '0 0 5px rgba(0, 0, 0, 0.1)',
+    backgroundColor: '#fff',
+    padding: '20px',
+    borderRadius: '12px',
+    boxShadow: '0 0 8px rgba(0, 0, 0, 0.1)',
     width: '48%',
-    minHeight: '238px',
+    minHeight: '250px',
     backgroundImage: 'url(https://web.jibble.io/assets/greeting-personal.0f13861a.svg)',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'right-bottom',
-    backgroundSize: 'cover',
+    backgroundSize: 'contain',  
+    color: '#333',
   };
+  
 
   const secDiv = {
-    backgroundColor: '#ffffff',
-    padding: '15px',
-    borderRadius: '10px',
-    boxShadow: '0 0 5px rgba(0, 0, 0, 0.1)',
+    backgroundColor: '#fff',
+    padding: '20px',
+    borderRadius: '12px',
+    boxShadow: '0 0 8px rgba(0, 0, 0, 0.1)',
     width: '48%',
-    minHeight: '238px',
+    minHeight: '250px',
   };
 
   const additionalInfoStyle = {
-    marginTop: '20px',
-    backgroundColor: '#ffffff',
-    padding: '15px',
-    borderRadius: '10px',
+    marginTop: '30px',
+    backgroundColor: '#fff',
+    padding: '20px',
+    borderRadius: '12px',
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
   };
 
@@ -126,7 +134,7 @@ const Dashboard = ({ user }) => {
 
       {/* Navbar */}
       <nav style={navbarStyle}>
-        <h2>Dashboard</h2>
+        <h2 style={headerStyle}>Dashboard</h2>
         <div style={buttonContainerStyle}>
           <button style={buttonStyle} onClick={toggleTimer}>
             {isRunning ? <FaPause /> : <FaPlay />} {isRunning ? 'Pause' : 'Start'}
@@ -145,7 +153,7 @@ const Dashboard = ({ user }) => {
           </div>
         </div>
         <div style={secDiv}>
-          <h2>Upcoming Holidays</h2>
+          <h2 style={headerStyle}>Upcoming Holidays</h2>
           <p>No upcoming holidays</p>
         </div>
       </div>
@@ -153,7 +161,7 @@ const Dashboard = ({ user }) => {
       <TrackedHours />
 
       <div style={additionalInfoStyle}>
-        <h2>Additional Information</h2>
+        <h2 style={headerStyle}>Additional Information</h2>
         <p>This section can display other relevant details.</p>
       </div>
     </div>

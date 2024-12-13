@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
-import './App.css';
+
+
 const App = () => {
   const [user, setUser] = useState(null);
 
@@ -11,7 +11,7 @@ const App = () => {
     if (loggedInUser) {
       setUser(loggedInUser);
     } else {
-      // Set a default user 
+      // Set a default user if not logged in
       setUser({ name: 'Debika Basu' });
     }
   }, []);
@@ -23,14 +23,15 @@ const App = () => {
   };
 
   return (
-    <Router>
-      <div style={appStyle}>
-        <Sidebar />
-        <Routes>
-          <Route path="/dashboard" element={<Dashboard user={user} />} />
-        </Routes>
+    <div style={appStyle}>
+      {/* Sidebar is always visible */}
+      <Sidebar />
+      
+      {/* Dashboard is displayed first */}
+      <div style={{ flex: 1 }}>
+        <Dashboard user={user} />
       </div>
-    </Router>
+    </div>
   );
 };
 
